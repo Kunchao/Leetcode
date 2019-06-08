@@ -19,3 +19,33 @@ class Solution:
         duplication[0] = -1
         return False
 
+
+
+class Solution:
+    """
+    数组中重复的数字，不能修改数组
+    """
+    def countRange(self, nums, i, j) -> int:
+        return sum(i <= v <= j for v in nums)
+
+    def duplicate(self, nums):
+        start = 0
+        end = len(nums) - 1
+        while start <= end:
+            mid = len(nums) // 2 + start
+            cnt = self.countRange(nums=nums, i=start, j=mid)
+            if start == end:
+                if cnt > 1:
+                    return start
+                else:
+                    break
+            if cnt > mid - start + 1:
+                end = mid
+            else:
+                start = mid + 1
+        return -1
+
+
+
+
+
