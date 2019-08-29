@@ -20,7 +20,6 @@ class Solution:
         return False
 
 
-
 class Solution:
     """
     数组中重复的数字，不能修改数组
